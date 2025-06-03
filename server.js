@@ -8,7 +8,10 @@ const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require('uuid');
 const jwt = require("jsonwebtoken");
 var cors=require('cors')
-app.use(cors());
+app.use(cors({
+  origin: true,            
+  credentials: true         
+}));
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -1026,6 +1029,6 @@ app.get("/api/getuserbyid",async(req,res)=>
   }
 
 })
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on port ${port}`)
 })
