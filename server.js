@@ -1,12 +1,14 @@
 const express = require('express')
 const app = express()
-const port = 9000
+const port = process.env.PORT || 9000;
 require('dotenv').config()
 app.use(express.json())//reading json format from body
 const mongoose = require('mongoose')
 const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require('uuid');
 const jwt = require("jsonwebtoken");
+var cors=require('cors')
+app.use(cors());
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
