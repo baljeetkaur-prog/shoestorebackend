@@ -8,9 +8,6 @@ const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require('uuid');
 const jwt = require("jsonwebtoken");
 
-const cookieParser = require("cookie-parser");
-app.use(cookieParser());
-
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
